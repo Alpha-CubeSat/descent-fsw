@@ -1,4 +1,5 @@
 #include "sfr.h"
+#include "Memory/serial_num.h"
 
 /**
  * The state field registry, where each sensor will have its values updated
@@ -23,9 +24,9 @@ namespace sfr {
 
     }
     /**
-     * Contains the states for the SX1276 LoRa
+     * Contains the states for the RH_RF95 LoRa Module
     */
-    namespace SX1276 {
+    namespace RH_RF95 {
 
     }; 
     /**
@@ -43,12 +44,8 @@ namespace sfr {
         //  SensorReading *Magn_z = new SensorReading(); 
         
     }; 
-}; 
 
-/**
- * - IMU : Adafruit 9-DOF Orientation IMU Fusion Breakout - BNO085 (BNO080) - STEMMA QT / Qwiic
-- CPU: Atmega328p
-- Temperature: Humidity sensor BME280
-- GPS: MAX-M10S-00B
-- LORA Transmitter: SX1276
-*/
+    namespace S_NUM{
+        uint8_t serial_number = get_serial_number();
+    }
+}; 

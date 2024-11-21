@@ -1,0 +1,24 @@
+[submodule "Adafruit_BME280_Library"]
+	path = Adafruit_BME280_Library
+	url = https://github.com/adafruit/Adafruit_BME280_Library.git
+[submodule "lib/Adafruit_BME280_Library"]
+	path = lib/Adafruit_BME280_Library
+	url = https://github.com/adafruit/Adafruit_BME280_Library.git
+[submodule "lib/Adafruit_BNO08x"]
+	path = lib/Adafruit_BNO08x
+	url = https://github.com/adafruit/Adafruit_BNO08x.git
+[submodule "lib/TinyGPSPlus"]
+	path = lib/TinyGPSPlus
+	url = https://github.com/mikalhart/TinyGPSPlus.git
+[submodule "lib/SparkFun_BNO080_Arduino_Library"]
+	path = lib/SparkFun_BNO080_Arduino_Library
+	url = https://github.com/sparkfun/SparkFun_BNO080_Arduino_Library.git
+[submodule "lib/RH-RF95"]
+	path = lib/RH-RF95
+	url = https://github.com/kenbiba/RH-RF95.git
+[submodule "lib/Adafruit_BusIO"]
+	path = lib/Adafruit_BusIO
+	url = https://github.com/adafruit/Adafruit_BusIO.git
+[submodule "lib/Adafruit_Sensor"]
+	path = lib/Adafruit_Sensor
+	url = https://github.com/adafruit/Adafruit_Sensor.git

@@ -6,19 +6,21 @@
 IMUMonitor::IMUMonitor(){
     
   // Try to initialize!
+
+  Serial.println("Getting here");
+  Serial.flush();
   if (!sensor.begin()) {
     Serial.println("Failed to find BNO085 chip");
   }
   else {
   Serial.println("BNO085 Found!");
-  intialization = true; 
-  // reports();
+  intialized = true; 
   }
 }
+
 void IMUMonitor::exceute(){
     if (sensor.hasReset()) {
     Serial.print("sensor was reset ");
-    reports();
     }
     if(sensor.dataAvailable()){
       sfr::BNO085 :: Acc_x -> setValue(sensor.getAccelX());
@@ -51,21 +53,6 @@ void IMUMonitor::exceute(){
     // }
 }
 
-void IMUMonitor::reports(void){
-    Serial.println("Setting desired reports");
-    sensor.enableAccelerometer(50); //Send data update every 50ms
-    sensor.enableGyro(50); //Send data update every 50ms
-    // if (!sensor.enableReport(SH2_ACCELEROMETER)) {
-    // Serial.println("Could not enable accelerometer");
-    //  }
-    // if (!sensor.enableReport(SH2_GYROSCOPE_CALIBRATED)) {
-    // Serial.println("Could not enable gyroscope");
-    //  }
-    // if (!sensor.enableReport(SH2_MAGNETIC_FIELD_CALIBRATED)) {
-    // Serial.println("Could not enable magnetic field calibrated");
-    // }
-}
-
-bool IMUMonitor::intialized(void){
-    return intialization;
+bool IMUMonitor::checkInitialization(void){
+    return intialized;
 }

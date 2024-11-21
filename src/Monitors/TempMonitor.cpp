@@ -1,7 +1,8 @@
 #include "TempMonitor.h"
 #include "sfr.h"
+#include "Wire.h"
 
-TempMonitor::TempMonitor(){
+TempMonitor::TempMonitor() {
 
     Wire.begin();
 

@@ -1,0 +1,16 @@
+Things to implement: 
+* watchdog timers 
+    * conditions for timers 
+    * Need to know how long before reset 
+    * https://github.com/adafruit/Adafruit_SleepyDog/blob/master/examples/BasicUsage/BasicUsage.ino 
+
+
+* implement the different packet that will be sent for recovery
+    * Include metadata in our packet (flight mode)
+* pack the altitude data 
+
+* When initializing radio head module we need to set the channel with the serial number  
+
+* need two separate serial numbers from two separate addresses, one for channel and one for downlink time 
+
+* llcc68 radio module instead 
