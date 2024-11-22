@@ -1,7 +1,6 @@
 #include "mcl.h"
 #include "sfr.h"
 
-//TODO: Consider std deviation threshold 
 void MainControlLoop::checkRecovery(){
     if (flightMode != RECOVERY && gpsMonitor.get_mean_altitude() < 5 ) {
         flightMode = RECOVERY;
@@ -10,6 +9,7 @@ void MainControlLoop::checkRecovery(){
 
 MainControlLoop::MainControlLoop(){
     flightMode = DESCENT;
+    Watchdog.enable(WDT_RESET_TIME);
 }
 
 void MainControlLoop::execute(){
@@ -139,9 +139,12 @@ void MainControlLoop::execute(){
 
         checkRecovery();
     } else {
-        // We are now in recovery mode
+        // We are in recovery mode
 
         // TODO: Implement a different packet that needs to be sent 
         // turn off every sensor except GPS 
     }
+
+    // pet the dog 
+    Watchdog.reset();
 }

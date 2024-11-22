@@ -1,3 +1,6 @@
+#ifndef TEMP_MONITOR_H
+#define TEMP_MONITOR_H
+
 #include <Adafruit_BME280.h>
 
 class TempMonitor {
@@ -6,10 +9,14 @@ class TempMonitor {
 
         Adafruit_BME280 bme; 
     public: 
-        // Read from sensor
+        // Reads from the BME280 
         void execute(); 
-        // Initialize I2C Via Wire.h
+
+        // initializes sensor 
         TempMonitor(); 
+
         // returns initialized
-       bool checkInitialization(); 
+        bool checkInitialization(); 
 }; 
+
+#endif 

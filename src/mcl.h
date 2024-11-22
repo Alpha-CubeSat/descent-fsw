@@ -1,7 +1,13 @@
+#ifndef MCL_H
+#define MCL_H
+
 #include "Monitors/TempMonitor.h"
 #include "Monitors/IMUMonitor.h"
 #include "Monitors/GPSMonitor.h"
 #include "Radio/lora.h"
+#include "Adafruit_SleepyDog.h"
+
+#define WDT_RESET_TIME 4000
 
 typedef enum FlightMode {
     DESCENT = 1, 
@@ -10,19 +16,18 @@ typedef enum FlightMode {
 
 class MainControlLoop {
     private:
-    TempMonitor tempMonitor;
-    IMUMonitor  imuMonitor; 
-    GPSMonitor gpsMonitor; 
-    LORA    loraTransmitter;
+        TempMonitor tempMonitor;
+        IMUMonitor  imuMonitor; 
+        GPSMonitor gpsMonitor; 
+        LORA    loraTransmitter;
 
-    FlightMode flightMode;
+        FlightMode flightMode;
     public:
-    /**
-     * Executes the loop that will read from monitors, update sfr, and print values
-    */
-    void execute(); 
+        void execute(); 
 
-    void checkRecovery();
+        void checkRecovery();
 
 MainControlLoop();
 }; 
+
+#endif
