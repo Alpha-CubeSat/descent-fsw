@@ -47,6 +47,7 @@ namespace sfr {
 
     // Contains the serial number for this chipsat, read from EEPROM
     namespace S_NUM{
-        extern uint8_t serial_number; 
+        extern uint8_t channel_serial_number; 
+        extern uint8_t down_time_serial_number; 
     }
 }; 

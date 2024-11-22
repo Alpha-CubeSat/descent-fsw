@@ -46,6 +46,7 @@ namespace sfr {
     }; 
 
     namespace S_NUM{
-        uint8_t serial_number = get_serial_number();
+        uint8_t channel_serial_number = get_channel_number(); 
+        uint8_t down_time_serial_number = get_down_time_number();
     }
 }; 

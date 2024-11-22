@@ -7,9 +7,8 @@ Things to implement:
 
 * implement the different packet that will be sent for recovery
     * Include metadata in our packet (flight mode)
-* pack the altitude data 
 
-* When initializing radio head module we need to set the channel with the serial number  
+* When initializing radio module we need to set the channel with the serial number  
 
 * need two separate serial numbers from two separate addresses, one for channel and one for downlink time 
 

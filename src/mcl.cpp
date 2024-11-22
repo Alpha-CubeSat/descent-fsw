@@ -3,7 +3,7 @@
 
 //TODO: Consider std deviation threshold 
 void MainControlLoop::checkRecovery(){
-    if (flightMode != RECOVERY && gpsMonitor.get_std_dev_altitude() < 1.5 ) {
+    if (flightMode != RECOVERY && gpsMonitor.get_mean_altitude() < 5 ) {
         flightMode = RECOVERY;
     }
 }
@@ -136,6 +136,8 @@ void MainControlLoop::execute(){
         loraTransmitter.Transmit();
         loraTransmitter.clearData();
         #endif
+
+        checkRecovery();
     } else {
         // We are now in recovery mode
 
