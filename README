@@ -8,8 +8,5 @@ Things to implement:
 * implement the different packet that will be sent for recovery
     * Include metadata in our packet (flight mode)
 
-* When initializing radio module we need to set the channel with the serial number  
-
-* need two separate serial numbers from two separate addresses, one for channel and one for downlink time 
-
-* llcc68 radio module instead 
+* Need to move initialization information to the SFR, so that we can pack it into the metadata 
+* Finalize a packet format 
